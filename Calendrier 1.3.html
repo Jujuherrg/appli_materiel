@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calendrier</title>
+	
+
+	<style type="text/css">
+		#calendrier1{
+			 display:flex;
+			 flex-wrap: wrap;
+
+		}
+
+		.case{
+			width: 100px;
+			height: 100px;
+			background-color: lightblue;
+			border: solid black 1px;
+		}
+
+		.semaine{
+			display:flex;
+			 flex-wrap: wrap;
+		}
+
+
+	</style>
+</head>
+
+
+
+<body id="page">
+
+<div id="calendrier1">
+	<div class="semaine" id="semaine1">
+		<div class="case" id="case01"></div>
+		<div class="case" id="case02"></div>
+		<div class="case" id="case03"></div>
+		<div class="case" id="case04"></div>
+		<div class="case" id="case05"></div>
+		<div class="case" id="case06"></div>
+		<div class="case" id="case00"></div>
+	</div>
+	<div class="semaine" id="semaine2">
+		<div class="case" id="case11"></div>
+		<div class="case" id="case12"></div>
+		<div class="case" id="case13"></div>
+		<div class="case" id="case14"></div>
+		<div class="case" id="case15"></div>
+		<div class="case" id="case16"></div>
+		<div class="case" id="case10"></div>
+	</div>
+	<div class="semaine" id="semaine2">
+		<div class="case" id="case21"></div>
+		<div class="case" id="case22"></div>
+		<div class="case" id="case23"></div>
+		<div class="case" id="case24"></div>
+		<div class="case" id="case25"></div>
+		<div class="case" id="case26"></div>
+		<div class="case" id="case20"></div>
+	</div>
+	<div class="semaine" id="semaine2">
+		<div class="case" id="case31"></div>
+		<div class="case" id="case32"></div>
+		<div class="case" id="case33"></div>
+		<div class="case" id="case34"></div>
+		<div class="case" id="case35"></div>
+		<div class="case" id="case36"></div>
+		<div class="case" id="case30"></div>
+	</div>
+	<div class="semaine" id="semaine2">
+		<div class="case" id="case41"></div>
+		<div class="case" id="case42"></div>
+		<div class="case" id="case43"></div>
+		<div class="case" id="case44"></div>
+		<div class="case" id="case45"></div>
+		<div class="case" id="case46"></div>
+		<div class="case" id="case40"></div>
+	</div>
+	<div class="semaine" id="semaine2">
+		<div class="case" id="case51"></div>
+		<div class="case" id="case52"></div>
+		<div class="case" id="case53"></div>
+		<div class="case" id="case54"></div>
+		<div class="case" id="case55"></div>
+		<div class="case" id="case56"></div>
+		<div class="case" id="case50"></div>
+	</div>
+</div>
+
+
+
+
+
+<div>
+<table id="calendrier">
+
+</table>
+</div>
+
+<script type="text/javascript">
+
+// On initialise les variables
+
+var today = new Date();
+var donnee = "";
+var semaine = 0;
+
+// On affiche la ligne
+for(var day = today.getDate(); day<31; today.setDate(today.getDate()+1)){
+	
+	console.log(day);
+
+	//On récupère les infos dans la date
+	day = today.getDate();
+	month = today.getMonth()+1;
+	year= today.getFullYear();
+
+	//On attribue sur la bonne case
+	var cellule = "case"+semaine+today.getDay();
+	console.log(cellule);
+	//Affichage
+	document.getElementById(cellule).innerHTML = day+'/'+month+'/'+year;
+
+	// On adapte en fonction de la semaine
+	if (today.getDay()==0){
+		semaine=semaine+1;
+	}
+
+
+//Cette partie fait disparaitre les div qui sont vides
+
+// for
+// 	if (this.innerHTML == "") {
+// 	      this.style.opacity="0";
+// 	    }
+
+
+}
+
+
+</script>
+
+
+</body>
+</html>
